@@ -1,0 +1,80 @@
+﻿<Window x:Class="YourNamespace.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="LED Control" Height="400" Width="600">
+    <Grid Height="auto" Width="600"  VerticalAlignment="Top" HorizontalAlignment="Left">
+        <StackPanel >
+        <DataGrid x:Name="LEDDataGrid" AutoGenerateColumns="False"  Height="auto" Width="520"
+        Margin="0" ItemsSource="{Binding}" SelectionMode="Single" SelectionUnit="Cell" 
+        VerticalAlignment="Top" HorizontalAlignment="Left" IsReadOnly="True" >
+            <DataGrid.Columns>
+                <!--No列-->
+                <DataGridTextColumn Header="No" Binding="{Binding No}" Width="30" IsReadOnly="True"/>
+                <!--発光時間-->
+                <DataGridTextColumn Header="発光時間" Binding="{Binding Time}" Width="80"  IsReadOnly="True"/>
+
+                <!--LED1 列（コンボボックス）-->
+                <DataGridTemplateColumn Header="LED1"  Width="80">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <ComboBox SelectedItem="{Binding LED1, UpdateSourceTrigger=PropertyChanged}" 
+                                      ItemsSource="{Binding RelativeSource={RelativeSource AncestorType=Window}, Path=LEDOptions}" />
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <!-- LED2 列（コンボボックス） -->
+                <DataGridTemplateColumn Header="LED2" Width="80">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <ComboBox SelectedItem="{Binding LED2, UpdateSourceTrigger=PropertyChanged}" 
+                                      ItemsSource="{Binding RelativeSource={RelativeSource AncestorType=Window}, Path=LEDOptions}" />
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <!-- LED3 列（コンボボックス） -->
+                <DataGridTemplateColumn Header="LED3" Width="80">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <ComboBox SelectedItem="{Binding LED3, UpdateSourceTrigger=PropertyChanged}" 
+                                      ItemsSource="{Binding RelativeSource={RelativeSource AncestorType=Window}, Path=LEDOptions}" />
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <!-- LED4 列（コンボボックス） -->
+                <DataGridTemplateColumn Header="LED4" Width="80">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <ComboBox SelectedItem="{Binding LED4, UpdateSourceTrigger=PropertyChanged}" 
+                                      ItemsSource="{Binding RelativeSource={RelativeSource AncestorType=Window}, Path=LEDOptions}" />
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <!-- LED5 列（コンボボックス） -->
+                <DataGridTemplateColumn Header="LED5" Width="80">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <ComboBox SelectedItem="{Binding LED5, UpdateSourceTrigger=PropertyChanged}" 
+                                      ItemsSource="{Binding RelativeSource={RelativeSource AncestorType=Window}, Path=LEDOptions}" />
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+        <!--デバッグ用-->
+        <ComboBox Name ="CopmboDebugNo" HorizontalAlignment="Left" VerticalAlignment="Top" Width="50" SelectedIndex="0">
+            <ComboBoxItem Content="1"/>
+            <ComboBoxItem Content="2"/>
+            <ComboBoxItem Content="3"/>
+            <ComboBoxItem Content="4"/>
+            <ComboBoxItem Content="5"/>
+            <ComboBoxItem Content="6"/>
+            <ComboBoxItem Content="7"/>
+            <ComboBoxItem Content="8"/>
+            <ComboBoxItem Content="9"/>
+            <ComboBoxItem Content="10"/>
+        </ComboBox>
+        <Button Content="Button" HorizontalAlignment="Left" Height="23" Width="51" Click="Button_Click_1"/>
+        <!--デバッグ用-->
+        </StackPanel>
+    </Grid>
+</Window>
