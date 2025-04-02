@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Person xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Name>John Doe</Name>
+  <Age>30</Age>
+  <Address>
+    <Street>123 Main St</Street>
+    <City>Springfield</City>
+    <PostalCode>12345</PostalCode>
+  </Address>
+  <PhoneNumbers>
+    <PhoneNumber>123-456-7890</PhoneNumber>
+    <PhoneNumber>987-654-3210</PhoneNumber>
+  </PhoneNumbers>
+</Person>
